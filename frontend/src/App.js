@@ -8,7 +8,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 
-
+import Profile from './pages/Profile';
+import ProtectedRoute from './pages/ProtectedRoute';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import HOME from './pages/HOME';
@@ -27,6 +28,12 @@ function App() {
         <Route path='/brands' element={<Brands />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} 
+        />
+
+
+
+
       </Routes>
     </BrowserRouter>
   );

@@ -21,6 +21,8 @@ exports.register = async (req, res) => {
   }
 };
 
+
+
 // Login user
 exports.login = async (req, res) => {
   const { email, password } = req.body;
@@ -35,11 +37,55 @@ exports.login = async (req, res) => {
 
     // Generate a JWT token
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    res.json({ token });
+
+
+
+
+
+
+
+
+
+    // res.json({ token });
+
+    // ✅ Return token and basic user info (no password)
+    res.json({
+      token,
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email
+      }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   } catch (err) {
     res.status(500).json({ message: 'Server error' });
   }
 };
+
+
+
+
+
 
 // Get user profile
 exports.getProfile = async (req, res) => {

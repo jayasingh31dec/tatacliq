@@ -59,6 +59,12 @@ function DropdownNavbar() {
           <Link to="/cart" className="text-dark fs-5">
             <i className="bi bi-bag"></i>
           </Link>
+
+          <Link to="/profile">
+            <i className="bi bi-person-circle" style={{ fontSize: '30px', cursor: 'pointer' }}></i>
+          </Link>
+
+
         </div>
       </div>
     </>
