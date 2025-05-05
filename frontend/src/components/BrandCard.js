@@ -3,6 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './BrandCard.css'; // Importing external CSS
 
+
 const BrandCard = ({ brandName, image }) => {
   const navigate = useNavigate();
 

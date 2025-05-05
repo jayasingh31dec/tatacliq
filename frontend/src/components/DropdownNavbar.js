@@ -4,11 +4,29 @@ import categories from '../data/categories';
 import brands from '../data/brands'; // your brands data
 import TopNavbar from './TopNavbar';
 import './DropdownNavbar.css';
+import { useCart } from '../contexts/CartContext'; // Import CartContext
+import { useWishlist } from '../contexts/WishlistContext';// Import WishlistContext
+
+
+
 
 function DropdownNavbar() {
   const [openMenu, setOpenMenu] = useState(null); // 'categories' or 'brands'
   const [openCategory, setOpenCategory] = useState(null);
   const [openSubcategory, setOpenSubcategory] = useState(null);
+
+
+
+
+
+  // Get cart and wishlist item counts
+  const { cartItems } = useCart();
+  const { wishlistItems } = useWishlist();
+
+
+
+
+
 
   const handleMenuToggle = (menu) => {
     setOpenMenu(openMenu === menu ? null : menu);
@@ -74,6 +92,7 @@ function DropdownNavbar() {
                                 {items.map((item) => (
                                   <li key={item}>
                                     <Link
+
                                       to={`/category/${cat.slug}/${sub.toLowerCase()}/${item.toLowerCase().replace(/\s+/g, '-')}`}
                                       className="dropdown-link"
                                     >
@@ -116,14 +135,65 @@ function DropdownNavbar() {
         {/* Right Side: Icons */}
         <div className="navbar-right">
           <Link to="/wishlist" className="icon-link" title="Wishlist">
-            <i className="bi bi-heart"></i>
+
+
+
+            <i className="bi bi-heart">
+              {wishlistItems.length > 0 && (
+                <span className="badge wishlist-badge">{wishlistItems.length}</span>
+              )}
+            </i>
+
+
+
           </Link>
+
+
+
+
+
+
           <Link to="/cart" className="icon-link" title="Cart">
-            <i className="bi bi-bag"></i>
+
+
+
+            <i className="bi bi-bag">
+              {cartItems.length > 0 && (
+                <span className="badge">{cartItems.length}</span>
+              )}
+            </i>
+
+
+
           </Link>
+
+
+
+
+
+
+
+
+
           <Link to="/profile" className="icon-link" title="Profile">
             <i className="bi bi-person-circle"></i>
           </Link>
+
+
+
+
+          {/* // my order icon  */}
+
+
+
+
+          <Link to="/my-orders" className="icon-link" title="My Orders">
+            <i className="bi bi-box-seam"></i>
+          </Link>
+
+
+
+
         </div>
       </nav>
     </>

@@ -23,9 +23,16 @@ export default function BrandPage() {
         ) : (
           <div className="row">
             {products.map((product) => (
-              <div key={product._id} className="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div key={product._id} className="col-12 col-sm-6 col-md-4 col-lg-3 ">
+                <div className="card h-100"> 
                 <ProductCard product={product} />
               </div>
+              </div>
+
+ 
+
+
+
             ))}
           </div>
         )}

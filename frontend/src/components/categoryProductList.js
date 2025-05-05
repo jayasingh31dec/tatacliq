@@ -1,6 +1,10 @@
-export async function categaryProductList({ category, subcategory, item }) {
+export async function categoryProductList({ category, subcategory, item }) {
+     
   try {
     const apiUrl = `http://localhost:3000/api/categories/${category}/${subcategory}/${item}`;
+
+ 
+
 
     const response = await fetch(apiUrl);
     

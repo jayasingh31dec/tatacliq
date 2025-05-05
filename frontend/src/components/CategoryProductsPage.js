@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { categaryProductList } from './categaryProductList'; // Adjust path if needed
+import { categoryProductList } from './categoryProductList'; // Adjust path if needed
 import ProductCard from '../components/ProductCard';
 import './CategoryProductsPage.css'; 
 
@@ -11,11 +11,14 @@ function CategoryProductsPage() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // ✅ Console log to check URL params
+    console.log("Params from URL:", categorySlug, subCategory, item);
+
     async function fetchProducts() {
       setLoading(true);
       setError(null);
       try {
-        const data = await categaryProductList({
+        const data = await categoryProductList({
           category: categorySlug,
           subcategory: subCategory,
           item: item,
