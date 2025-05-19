@@ -2,11 +2,11 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    background: #f19393;
+    background: #383434;
     box-shadow: 0 2px 8px rgba(244, 66, 1, 0.06);
     padding: 0.5rem 2rem;
     position: relative;
-    z-index: 99;
+    z-index: 20;
   }
   
   .navbar-left {
@@ -27,7 +27,7 @@
     color: #333;
     padding: 0.5rem 1.2rem;
     border-radius: 25px;
-    font-weight: 500;
+    font-weight: 300;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -46,19 +46,23 @@
     margin-left: 0.5rem;
     font-size: 0.9em;
   }
+
+
+
+  .dropdown-hover-wrapper {
+    position: relative;
+  }
+
+
+
   
   .dropdown-panel {
     position: absolute;
-    top: 2.8rem;
+    top: 100%;
     left: 0;
-    background: #fff;
-    border: 1px solid #dee2e6;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    border-radius: 8px;
-    min-width: 320px;
-    padding: 1rem;
-    z-index: 100;
-    animation: fadeIn 0.2s;
+    background: white;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
   
   @keyframes fadeIn {
@@ -137,6 +141,23 @@
   }
 
 
+  .dropdown-navbar {
+    padding-left: 2rem; /* pehle 2rem tha, ab 4rem karke right le jaenge */
+    padding-right: 2rem;
+  }
+  
+
+
+  .dropdown-navbar {
+    margin-left: 1rem;
+  }
+  
+
+  .navbar-right {
+    margin-left: auto;  /* isse ye poori right side chala jaega */
+    padding-right: auto; /* thoda gap right side se */
+  }
+  
 
 
 
@@ -147,6 +168,29 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 
@@ -170,7 +214,7 @@
   align-items: center;
   justify-content: center;
   font-size: 24px; /* icon size */
-  color: #0d0c0c;
+  color: #f7eeee;
   cursor: pointer;
 }
 
@@ -194,11 +238,36 @@
    /* white outline to separate from icon */
 }
 
-/* Optional: for separate control (if needed) */
-.wishlist-badge {
-  background-color: #ff4081; /* pink for wishlist */
-}
 
-.cart-badge {
-  background-color: #2196f3; /* blue for cart */
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

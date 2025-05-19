@@ -61,6 +61,13 @@ function Home() {
 
       {/* Product Grid */}
       <ProductGrid />
+
+
+
+
+      <div style={{ marginBottom: '100px' }}></div> 
+
+
       
 
     </div>

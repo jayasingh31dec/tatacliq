@@ -1,33 +1,78 @@
-// src/pages/MyOrders.js
-import React from 'react';
-import { useOrders } from '../contexts/OrderContext';
+import React, { useEffect, useState } from 'react';
+import { useOrders } from '../contexts/userOrderContext';
+import './MyOrders.css';
 
-const MyOrders = () => {
-  const { orders } = useOrders();
+function MyOrders() {
+  const { orders, setOrders } = useOrders();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  if (orders.length === 0) {
-    return <h3>You have no orders yet.</h3>;
-  }
+  useEffect(() => {
+    const fetchOrders = async () => {
+      try {
+        const token = localStorage.getItem('token'); // or use context
+        const response = await fetch('http://localhost:3000/api/orders/my', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (!response.ok) throw new Error('Failed to fetch orders');
+
+        const data = await response.json();
+        setOrders(data);
+        setLoading(false);
+      } catch (err) {
+        setError(err.message);
+        setLoading(false);
+      }
+    };
+
+    fetchOrders();
+  }, [setOrders]);
+
+  if (loading) return <p>Loading orders...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="container mt-5">
-      <h2>My Orders</h2>
-      {orders.map((order, index) => (
-        <div key={index} className="card mb-3 p-3">
-          <h5>Order ID: #{order.orderId}</h5>
-          <p><strong>Name:</strong> {order.customer.fullName}</p>
-          <p><strong>Date:</strong> {order.orderDate}</p>
-          <div className="d-flex align-items-center">
-            <img src={order.product.image} alt={order.product.name} style={{ width: '80px', marginRight: '10px' }} />
-            <div>
-              <h6>{order.product.name}</h6>
-              <p>Price: ₹{order.product.price}</p>
+    <div className="orders-container">
+      <h2>Your Orders</h2>
+      {orders.length === 0 ? (
+        <p>No orders found.</p>
+      ) : (
+        <div className="orders-list">
+          {orders.map((order) => (
+            <div key={order._id} className="order-item">
+              <div className="order-image">
+                {order.products.map((item, index) => (
+                  <img
+                    key={index}
+                    src={item.product?.image}
+                    alt={item.product?.name || 'Unnamed Product'}
+                    className="product-image"
+                    onError={(e) => { e.target.src = "https://via.placeholder.com/150"; }}
+                  />
+                ))}
+              </div>
+              <div className="order-details">
+                <div className="product-names">
+                  {order.products.map((item, index) => (
+                    <p key={index}>
+                      {item.product?.name || 'Unnamed Product'} × {item.quantity}
+                    </p>
+                  ))}
+                </div>
+
+                <p className="order-date">Ordered on: {new Date(order.createdAt).toLocaleDateString()}</p>
+                <p className="order-price">Price: ₹{order.totalPrice}</p>
+                <p className="order-address">Delivery Address: {order.address}</p>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
-      ))}
+      )}
     </div>
   );
-};
+}
 
 export default MyOrders;

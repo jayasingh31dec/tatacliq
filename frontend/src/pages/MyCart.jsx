@@ -12,8 +12,8 @@ function MyCart() {
     0
   );
 
-  const handleBuyNow = (product) => {
-    navigate('/CheckoutPage', { state: { product } });
+  const handlePlaceOrder = () => {
+    navigate('/CheckoutPage', { state: { products: cartItems } });
   };
 
   return (
@@ -30,43 +30,39 @@ function MyCart() {
                 <h4>{item.name}</h4>
                 <p>Price: ₹{item.price}</p>
                 <div className="quantity-controls">
-                  <button onClick={() => decrementItem(item.id)}>-</button>
+                  <button onClick={() => decrementItem(item)}>-</button>
                   <span>{item.quantity || 1}</span>
-                  <button onClick={() => incrementItem(item.id)}>+</button>
+                  <button onClick={() => incrementItem(item)}>+</button>
                 </div>
 
-                {/* buy noiw button */}
-
-
-                <div className="d-flex gap-3 mt-2">
-                  <button
-                    className="btn btn-primary px-3 py-2"
-                    type="button"
-                    onClick={() => handleBuyNow(item)} // ✅ correct item bhejna
-                  >
-                    Buy Now
-                  </button>
 
 
 
-                  {/* remove from card button */}
+                {/* remove from card button */}
 
 
 
-                  <button
-                    className="btn btn-danger rounded px-4 py-2"
-                    type="button"
-                    onClick={() => removeFromCart(item.id)}
-                  >
-                    Remove
-                  </button>
-                </div>
-
+                <button
+                  className="btn btn-danger rounded px-4 py-2"
+                  type="button"
+                  onClick={() => removeFromCart(item)}
+                >
+                  Remove
+                </button>
               </div>
+
             </div>
+
           ))}
           <hr />
           <h3>Total Price: ₹{totalPrice}</h3>
+          {/* ✅ Place Order Button for all cart items */}
+          <button
+            className="btn btn-success px-4 py-2 mt-3"
+            onClick={handlePlaceOrder}
+          >
+            Place Order
+          </button>
         </div>
       )}
     </div>

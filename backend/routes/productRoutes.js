@@ -1,29 +1,51 @@
 const express = require("express");
 const router = express.Router();
 const Product = require("../models/Product");
+const { protect } = require("../middleware/authMiddleware");  // Assuming the protect middleware is in this file
+const { body, validationResult } = require("express-validator"); // To validate input
 
-// POST add new product
-router.post("/", async (req, res) => {
-  try {
-    const { name, brand, price, image, description, category, subcategory, item } = req.body;
-    const newProduct = new Product({
-      name,
-      brand,
-      price,
-      image,
-      description,
-      category: category.toLowerCase(),
-      subcategory: subcategory.toLowerCase(),
-      item: item.toLowerCase(),
-    });
-    await newProduct.save();
-    res.status(201).json(newProduct);
-  } catch (err) {
-    res.status(500).json({ message: "Error adding product" });
+// POST add new product (Protected route)
+router.post(
+  "/",
+  protect,  // Protect the route so only authenticated users can add products
+  [
+    body("name").not().isEmpty().withMessage("Product name is required"),
+    body("price").isNumeric().withMessage("Price must be a number"),
+    body("image").not().isEmpty().withMessage("Image URL is required"),
+    body("category").not().isEmpty().withMessage("Category is required"),
+    body("subcategory").not().isEmpty().withMessage("Subcategory is required"),
+    body("item").not().isEmpty().withMessage("Item is required"),
+  ],
+  async (req, res) => {
+    // Validate input data
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+      const { name, brand, price, image, description, category, subcategory, item } = req.body;
+      const newProduct = new Product({
+        name,
+        brand,
+        price,
+        image,
+        description,
+        category: category.toLowerCase(),
+        subcategory: subcategory.toLowerCase(),
+        item: item.toLowerCase(),
+      });
+      
+      await newProduct.save();
+      res.status(201).json(newProduct);
+    } catch (err) {
+      console.error(err);  // Log the error for debugging purposes
+      res.status(500).json({ message: "Error adding product", error: err.message });
+    }
   }
-});
+);
 
-// GET products (optionally filter by brand)
+// GET all products (Optionally filter by brand)
 router.get("/", async (req, res) => {
   try {
     const brand = req.query.brand;
@@ -31,7 +53,7 @@ router.get("/", async (req, res) => {
 
     if (brand) {
       products = await Product.find({
-        brand: { $regex: new RegExp(`^${brand}$`, "i") }
+        brand: { $regex: new RegExp(`^${brand}$`, "i") },
       });
     } else {
       products = await Product.find();
@@ -39,9 +61,69 @@ router.get("/", async (req, res) => {
 
     res.json(products);
   } catch (error) {
+    console.error(error);  // Log error for debugging
     res.status(500).json({ message: error.message });
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Search products by name, brand, category etc.
+router.get("/search", async (req, res) => {
+  const query = req.query.query;
+
+  if (!query) {
+    return res.status(400).json({ message: "Query is required" });
+  }
+
+  try {
+    const results = await Product.find({
+      $or: [
+        { name: { $regex: query, $options: "i" } },
+        { brand: { $regex: query, $options: "i" } },
+        { category: { $regex: query, $options: "i" } },
+        { subcategory: { $regex: query, $options: "i" } },
+        { item: { $regex: query, $options: "i" } },
+      ],
+    });
+
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ message: "Search failed", error });
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // GET product by ID
 router.get("/:id", async (req, res) => {
@@ -50,18 +132,23 @@ router.get("/:id", async (req, res) => {
     if (!product) return res.status(404).json({ message: "Product not found" });
     res.json(product);
   } catch (err) {
+    console.error(err);  // Log error for debugging
     res.status(500).json({ message: "Error fetching product" });
   }
 });
 
+
+
+
+
+
+
+
+
 // PUT update product by ID
 router.put("/:id", async (req, res) => {
   try {
-    const updatedProduct = await Product.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    );
+    const updatedProduct = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
 
     if (!updatedProduct) {
       return res.status(404).json({ message: "Product not found" });
@@ -69,9 +156,15 @@ router.put("/:id", async (req, res) => {
 
     res.json(updatedProduct);
   } catch (err) {
+    console.error(err);  // Log error for debugging
     res.status(500).json({ message: err.message });
   }
 });
+
+
+
+
+
 
 // DELETE product by ID
 router.delete("/:id", async (req, res) => {
@@ -84,8 +177,13 @@ router.delete("/:id", async (req, res) => {
 
     res.json({ message: "Product deleted successfully." });
   } catch (err) {
+    console.error(err);  // Log error for debugging
     res.status(500).json({ message: err.message });
   }
 });
+
+
+
+
 
 module.exports = router;

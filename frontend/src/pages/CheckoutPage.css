@@ -1,0 +1,114 @@
+.checkout-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.checkout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.checkout-header h2 {
+  font-size: 28px;
+  color: #333;
+}
+
+.checkout-user-info {
+  font-size: 14px;
+  color: #666;
+}
+
+.checkout-card {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.product-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.product-details {
+  display: flex;
+  gap: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-info {
+  font-size: 16px;
+}
+
+.checkout-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+textarea.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  resize: none;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+select.form-control {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.btn.pay-btn {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn.pay-btn:hover {
+  background-color: #1565c0;
+}
+
+.payment-success {
+  color: green;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.card-element-wrapper {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fafafa;
+}

@@ -4,14 +4,10 @@ const brands = [
       slug: "nike",
       
     },
+   
     {
-      name: "Apple",
-      slug: "apple",
-     
-    },
-    {
-      name: "Zara",
-      slug: "zara",
+      name: "Libas",
+      slug: "libas",
     
     },
     {

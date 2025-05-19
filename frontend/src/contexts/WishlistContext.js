@@ -10,11 +10,30 @@ export const WishlistProvider = ({ children }) => {
   // Function to add item to wishlist
   const addToWishlist = (item) => {
     setWishlistItems([...wishlistItems, item]);
+    alert("Item added to wishlist!");
   };
 
+
+
+  
+
   // Function to remove item from wishlist
-  const removeFromWishlist = (itemId) => {
-    setWishlistItems(wishlistItems.filter(item => item.id !== itemId));
+  const removeFromWishlist = (targetItem) => {
+    setWishlistItems(prev =>
+      prev.filter(item =>
+        !(
+          item.name === targetItem.name &&
+          item.brand === targetItem.brand &&
+          item.price === targetItem.price &&
+          item.image === targetItem.image &&
+          item.description === targetItem.description &&
+          item.category === targetItem.category &&
+          item.subcategory === targetItem.subcategory &&
+          item.item === targetItem.item
+        )
+      )
+    );
+    alert("Item removed from wishlist!");
   };
 
   return (
