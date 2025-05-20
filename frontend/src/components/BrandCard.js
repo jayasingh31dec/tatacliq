@@ -13,8 +13,10 @@ const BrandCard = ({ brandName, image }) => {
 
   return (
     <div className="brand-card" onClick={handleClick}>
+      <div className="brand-image-wrapper">
       <img src={image} alt={brandName} className="brand-image" />
       {/* <h4 className="brand-name">{brandName}</h4> */}
+    </div>
     </div>
   );
 };

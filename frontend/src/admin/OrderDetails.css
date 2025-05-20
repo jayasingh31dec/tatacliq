@@ -56,6 +56,8 @@
 .product-card {
     padding: 10px;
     overflow-x: auto;
+     /* width: 890px;            yha pe hamesa wirth fix krna hoga min-width ya width */
+
     min-width: 880px;
     max-width: 100%;
     height: auto;   

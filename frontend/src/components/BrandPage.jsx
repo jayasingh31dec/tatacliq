@@ -10,7 +10,10 @@ export default function BrandPage() {
   useEffect(() => {
     axios
       .get(`http://localhost:3000/api/products?brand=${brandId}`)
-      .then((res) => setProducts(res.data))
+      .then((res) => {
+        console.log("Brand products response:", res.data);
+        setProducts(res.data);
+      })
       .catch((err) => console.error("Error fetching products:", err));
   }, [brandId]);
 

@@ -15,6 +15,8 @@ router.post(
     body("category").not().isEmpty().withMessage("Category is required"),
     body("subcategory").not().isEmpty().withMessage("Subcategory is required"),
     body("item").not().isEmpty().withMessage("Item is required"),
+    body("section").not().isEmpty().withMessage("Section is required"),
+
   ],
   async (req, res) => {
     // Validate input data
@@ -24,7 +26,7 @@ router.post(
     }
 
     try {
-      const { name, brand, price, image, description, category, subcategory, item } = req.body;
+      const { name, brand, price, image, description, category, subcategory, item ,section} = req.body;
       const newProduct = new Product({
         name,
         brand,
@@ -34,6 +36,7 @@ router.post(
         category: category.toLowerCase(),
         subcategory: subcategory.toLowerCase(),
         item: item.toLowerCase(),
+        section: section.toLowerCase()
       });
       
       await newProduct.save();

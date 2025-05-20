@@ -1,6 +1,6 @@
 // src/pages/Home.js
 import React from 'react';
-import ProductGrid from '../components/ProductGrid';
+// import ProductGrid from '../components/ProductGrid';
 import BannerCarousel from '../components/BannerCarousel';
 import CategoryCard from '../components/CategoryCard';
 import BrandCard from '../components/BrandCard';
@@ -29,6 +29,22 @@ const brands = [
   { name: 'Adidas', image: 'https://assets.tatacliq.com/medias/sys_master/images/63588841848862.jpg' },
   // Add more as needed
 ];
+
+
+
+const HerFastionUniverse = [
+  { name: 'Fashor', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236468334622.png' },
+  { name: `Levi's`, image: 'https://assets.tatacliq.com/medias/sys_master/images/65236468400158.png' },
+  { name: 'Styli', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236468465694.png' },
+  { name: 'Autumn Lane', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236468531230.png' },
+  // Add more as needed
+];
+
+
+
+
+
+
 
 function Home() {
   return (
@@ -60,15 +76,32 @@ function Home() {
       </div>
 
       {/* Product Grid */}
-      <ProductGrid />
+      {/* <ProductGrid /> */}
+
+
+      <div style={{ marginBottom: '100px' }}></div>
 
 
 
 
-      <div style={{ marginBottom: '100px' }}></div> 
 
 
-      
+
+      {/* Her Fastion Universe */}
+      <div style={{ marginBottom: "10%", color: "red", fontSize: "24px" }}>
+        <h2 className="text-center my-4">Her Fashion Universe</h2>
+      </div>
+      <div className="container my-4 d-flex flex-wrap justify-content-center gap-3">
+        {HerFastionUniverse.map((brand, index) => (
+          <BrandCard key={index} brandName={brand.name} image={brand.image} />
+        ))}
+      </div>
+      <div style={{ marginBottom: '100px' }}></div>
+
+
+
+
+
 
     </div>
   );
