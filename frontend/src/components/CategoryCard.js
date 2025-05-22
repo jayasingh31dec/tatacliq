@@ -29,7 +29,8 @@ function CategoryCard({ title, image, link }) {
       </Link>
 
       {/* Title below card */}
-      <div style={{ fontSize: '14px', marginTop: '5px' }}>{title}</div>
+      <div style={{ display: 'none' }}>{title}</div>
+
     </div>
   );
 }

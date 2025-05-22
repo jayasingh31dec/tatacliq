@@ -10,14 +10,14 @@ import Login from './pages/Login';
 import Categories from './pages/Categories';
 import BrandsList from './pages/BrandsList';
 import ProductGrid from './components/ProductGrid';
-import ProductDetail from './pages/ProductDetail';
+// import ProductDetail from './pages/ProductDetail';
 import BrandPage from "./components/BrandPage";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import BrandProducts from './pages/BrandProducts';
 import BrandCardPage from './pages/BrandCardPage';
 import BrandSubcategoryProducts from './pages/BrandSubcategoryProducts';
-import CategoryProductsPage from './components/CategoryProductsPage'; // <-- ADD THIS LINE
+import CategoryProductsPage from './components/CategoryProductsPage'; 
 import MyWishlist from './pages/MyWishlist';
 import MyCart from './pages/MyCart';
 import CheckoutPage from './pages/CheckoutPage';
@@ -46,6 +46,15 @@ import TrackOrderDetails from './pages/TrackOrderDetails';
 import OrderDetails from './admin/OrderDetails';
 
 import SearchResultsPage from './components/SearchResultsPage';
+
+
+
+
+import ParticularProductCardDetail from "./components/particularProductCardDetail";
+// import ParticularBrandCardPageDetail from "./pages/ParticularBrandCardPageDetail";
+import SizeSelector from "./pages/SizeSelector";
+  
+
 
 
 
@@ -87,7 +96,13 @@ function App() {
               <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
               <Route path="/category/:categoryName" element={<CategoryPage />} />
               <Route path="/category/:categorySlug/:subCategory/:item" element={<CategoryProductsPage />} /> {/* <-- ADD THIS ROUTE */}
-              <Route path="/product/:id" element={<ProductDetail />} />
+              {/* <Route path="/product/:id" element={<ProductDetail />} /> */}
+
+             <Route path="/product/:id" element={<ParticularProductCardDetail />} />
+             {/* <Route path="/product/:id" element={<ParticularBrandCardPageDetail />} /> */}
+             <Route path="/size" element={<SizeSelector />} />
+
+
               <Route path="/brands/:brandId" element={<BrandPage />} />
 
               <Route path="/brand/:brandName" element={<BrandCardPage />} />

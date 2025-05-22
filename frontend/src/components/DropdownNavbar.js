@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import categories from '../data/categories';
 import brands from '../data/brands';
 import TopNavbar from './TopNavbar';
-import SearchBar from './SearchBar'; // 👈 Import search bar
+import SearchBar from './SearchBar';
+import { SlArrowDown, SlArrowUp } from "react-icons/sl";
+
 
 import './DropdownNavbar.css';
 import { useCart } from '../contexts/CartContext';
@@ -44,12 +46,35 @@ function DropdownNavbar() {
                 onMouseEnter={() => handleMenuToggle('categories')}
                 onMouseLeave={handleMenuClose}
               >
-                <button
-                  className={`dropdown-btn ${openMenu === 'categories' ? 'active' : ''}`}
-                >
-                  <i className="bi bi-list"></i> Categories
-                  <span className="dropdown-arrow">{openMenu === 'categories' ? '▲' : '▼'}</span>
-                </button>
+
+
+
+
+<span
+  onClick={() => setOpenMenu(openMenu === 'categories' ? '' : 'categories')}
+  style={{
+    cursor: 'pointer',
+    display: 'inline-flex',
+    alignItems: 'center',
+    color: 'white',
+    fontSize: '16px', 
+    fontWeight: 'bold', 
+    gap: '6px', 
+    marginRight:"7px",
+    marginLeft:"5px",
+    marginTop:"7px"
+  }}
+>
+  Categories
+  {openMenu === 'categories' ? <SlArrowUp /> : <SlArrowDown />}
+</span>
+
+
+
+
+
+
+
 
                 {openMenu === 'categories' && (
                   <div className="dropdown-panel">
@@ -107,12 +132,47 @@ function DropdownNavbar() {
                 onMouseEnter={() => handleMenuToggle('brands')}
                 onMouseLeave={handleMenuClose}
               >
-                <button
-                  className={`dropdown-btn ${openMenu === 'brands' ? 'active' : ''}`}
-                >
-                  <i className="bi bi-stars"></i> Brands
-                  <span className="dropdown-arrow">{openMenu === 'brands' ? '▲' : '▼'}</span>
-                </button>
+
+
+
+
+
+
+
+
+                
+
+
+
+
+                <span
+  onClick={() => setOpenMenu(openMenu === 'brands' ? '' : 'brands')}
+  style={{
+    cursor: 'pointer',
+    display: 'inline-flex',
+    alignItems: 'center',
+    color: 'white',
+    fontSize: '16px', 
+    fontWeight: 'bold', 
+    gap: '6px' ,
+    marginRight:'10px',
+    marginLeft:'15px',
+    marginTop:"7px"
+
+  }}
+>
+  brands
+  {openMenu === 'brands' ? <SlArrowUp /> : <SlArrowDown />}
+</span>
+
+
+
+
+
+
+
+
+
 
                 {openMenu === 'brands' && (
                   <div className="dropdown-panel">
@@ -140,7 +200,7 @@ function DropdownNavbar() {
           </div>
 
           {/* Wishlist and Cart icons */}
-          <div className="navbar-right me-2">
+          <div  className="navbar-right ">
             <Link to="/wishlist" className="icon-link" title="Wishlist">
               <i className="bi bi-heart">
                 {wishlistItems.length > 0 && (
@@ -150,7 +210,7 @@ function DropdownNavbar() {
             </Link>
 
             <Link to="/cart" className="icon-link" title="Cart">
-              <i className="bi bi-bag me-2">
+              <i className="bi bi-bag ">
                 {cartItems.length > 0 && (
                   <span className="badge">{cartItems.length}</span>
                 )}

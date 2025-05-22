@@ -40,7 +40,7 @@ const BrandProducts = () => {
                 }} 
               />
             </div>
-            <h3 style={{ fontSize: "16px" }}>{product.name}</h3>
+            <h3 style={{ fontSize: "16px" ,color:"red"}}>{product.name}</h3>
             <p style={{ fontWeight: "bold", margin: "5px 0" }}>₹{product.price}</p>
             <p style={{ fontSize: "14px", color: "#555" }}>{product.description}</p>
           </div>

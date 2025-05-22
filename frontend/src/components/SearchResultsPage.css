@@ -34,10 +34,26 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
 
-  /* height: 500px;   yhi pe min and with fix krna hai har time */
-  max-height: 500px;
-  max-width: 300px;
+
+
+
+
+
+
+
+
+
+  /* height: 500px;   yhi pe min and with fix krna h*/
+  min-height: 500px;
+  min-width: 300px;
 }
+
+
+
+
+
+
+
 
 .product-card:hover {
   transform: scale(1.02);

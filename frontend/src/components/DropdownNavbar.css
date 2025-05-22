@@ -128,12 +128,16 @@
     align-items: center;
     gap: 1.5rem;
     margin-top: 0.5rem;
+    margin-right: 10px
+
   }
   
   .icon-link {
     color: #333;
     font-size: 1.6rem;
     transition: color 0.2s;
+    gap:8px;
+    margin-left: 10px;
   }
   
   .icon-link:hover {

@@ -23,7 +23,7 @@ const cartReducer = (state, action) => {
 
   case 'ADD_TO_CART':
   const existingIndex = state.cartItems.findIndex(
-    item => item._id === action.payload._id
+    item => item._id === action.payload._id && item.size === action.payload.size
   );
 
   if (existingIndex !== -1) {

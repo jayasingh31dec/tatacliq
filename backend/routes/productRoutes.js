@@ -16,6 +16,16 @@ router.post(
     body("subcategory").not().isEmpty().withMessage("Subcategory is required"),
     body("item").not().isEmpty().withMessage("Item is required"),
     body("section").not().isEmpty().withMessage("Section is required"),
+    body("rating").optional().isNumeric().withMessage("Rating must be a number"),
+    body("outOfStock").optional().isBoolean().withMessage("outOfStock must be true or false"),
+    body("limitedItem").optional().isBoolean().withMessage("limitedItem must be true or false"),
+    body("discountPrice").optional().isNumeric().withMessage("Discount Price must be a number"),
+    body("discountPercent").optional().isNumeric().withMessage("Discount Percent must be a number"),
+    body("images").optional().isArray().withMessage("Images should be an array of URLs"),
+    body("sizes").optional().isArray().withMessage("Sizes must be an array")
+
+
+
 
   ],
   async (req, res) => {
@@ -26,19 +36,26 @@ router.post(
     }
 
     try {
-      const { name, brand, price, image, description, category, subcategory, item ,section} = req.body;
+      const { name, brand, price, image, images, description, category, subcategory, item, section, rating, outOfStock, limitedItem, discountPrice, discountPercent ,sizes} = req.body;
       const newProduct = new Product({
         name,
         brand,
         price,
         image,
+        images,
         description,
         category: category.toLowerCase(),
         subcategory: subcategory.toLowerCase(),
         item: item.toLowerCase(),
-        section: section.toLowerCase()
+        section: section.toLowerCase(),
+        rating,
+        outOfStock,
+        limitedItem,
+        discountPrice,
+        discountPercent,
+        sizes
       });
-      
+
       await newProduct.save();
       res.status(201).json(newProduct);
     } catch (err) {

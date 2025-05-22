@@ -28,6 +28,7 @@ function MyCart() {
               <img src={item.image} alt={item.name} style={{ width: '100px' }} />
               <div className="cart-info">
                 <h4>{item.name}</h4>
+                <p>Size: <strong>{item.size}</strong></p>
                 <p>Price: ₹{item.price}</p>
                 <div className="quantity-controls">
                   <button onClick={() => decrementItem(item)}>-</button>
