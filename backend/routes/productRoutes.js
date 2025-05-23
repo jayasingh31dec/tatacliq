@@ -36,7 +36,7 @@ router.post(
     }
 
     try {
-      const { name, brand, price, image, images, description, category, subcategory, item, section, rating, outOfStock, limitedItem, discountPrice, discountPercent ,sizes} = req.body;
+      const { name, brand, price, image, images, description, category, subcategory, item, section, rating, outOfStock, limitedItem, discountPrice, discountPercent ,sizes, color } = req.body;
       const newProduct = new Product({
         name,
         brand,
@@ -53,7 +53,8 @@ router.post(
         limitedItem,
         discountPrice,
         discountPercent,
-        sizes
+        sizes,
+        color
       });
 
       await newProduct.save();
@@ -201,6 +202,39 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+
+
+
+
+
+
+
+
+
+// GET /api/products/filters
+router.get("/filters", async (req, res) => {
+  try {
+    const brands = await Product.distinct("brand");
+    const categories = await Product.distinct("category");
+    const subcategories = await Product.distinct("subcategory");
+    const items = await Product.distinct("item");
+    const sections = await Product.distinct("section");
+    const sizes = await Product.distinct("sizes");
+
+    res.json({ brands, categories, subcategories, items, sections, sizes });
+  } catch (error) {
+    console.error("Error getting filter data:", error);
+    res.status(500).json({ message: "Failed to load filters" });
+  }
+});
+
+
+
+
+
+
+
+
 
 
 

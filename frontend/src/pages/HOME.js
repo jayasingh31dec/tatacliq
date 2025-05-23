@@ -64,7 +64,7 @@ const SquareBrands = [
 
 const CliqAllStars = [
   { name: 'Varanga', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466237470.png' },
-  { name: '02', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466303006.png' },
+  { name: 'Hoversole', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466303006.png' },
   { name: `03`, image: 'https://assets.tatacliq.com/medias/sys_master/images/65236482523166.png' },
   { name: '04', image: 'https://assets.tatacliq.com/medias/sys_master/images/63588841848862.jpg' },
   { name: '1', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466761758.png' },
@@ -83,7 +83,7 @@ const CliqAllStars = [
 
 const HerFastionUniverse = [
   { name: 'Fashor', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236468334622.png' },
-  { name: `2`, image: 'https://assets.tatacliq.com/medias/sys_master/images/65236468400158.png' },
+  { name: `Levi's`, image: 'https://assets.tatacliq.com/medias/sys_master/images/65236468400158.png' },
   { name: 'Styli', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236468465694.png' },
   { name: 'Autumn Lane', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236468531230.png' },
   // Add more as needed

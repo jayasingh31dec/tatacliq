@@ -1,4 +1,4 @@
-.image-arrow {
+/* .image-arrow {
   position: absolute;
   top: 50%;
   background: rgb(250, 249, 249);
@@ -25,3 +25,85 @@
 .image-container:hover .image-arrow {
   display: block;
 }
+
+
+
+
+
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .image-arrow {
+  position: absolute;
+  top: 50%;
+  background: rgb(250, 249, 249);
+  border-radius: 20%;
+  padding: 8px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 24px;
+  display: block;
+}
+
+.arrow-left {
+  left: 10px;
+}
+
+.arrow-right {
+  right: 10px;
+}
+
+.color-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin: 5px;
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.color-circle.selected {
+  border: 2px solid black;
+}
+

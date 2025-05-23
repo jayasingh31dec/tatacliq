@@ -46,7 +46,25 @@ const productSchema = new mongoose.Schema({
   sizes: [{
     type: String,
     set: v => typeof v === "string" && isNaN(v) ? v.toUpperCase() : v
-  }]
+  }],
+
+
+
+
+
+color: {
+  type: [String],
+  set: (colors) => {
+    if (!Array.isArray(colors)) return [];
+    return colors.map(color =>
+      typeof color === 'string'
+        ? color.charAt(0).toUpperCase() + color.slice(1).toLowerCase()
+        : color
+    );
+  }
+}
+
+
 
 
 

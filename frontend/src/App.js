@@ -34,19 +34,28 @@ import AdminDashboard from './admin/AdminDashboard';
 import AddProduct from './admin/AddProduct';
 import ManageOrders from './admin/ManageOrders';
 import TrackOrders from './pages/TrackOrders';
-
+import AdminGiftCardForm from './admin/AdminGiftCardForm';
 // import AdminUsers from "./admin/AdminUsers.js";
 import SearchBar from './components/SearchBar';
 
 
-import Footer from "./components/Footer";
+
 // import TrackSingleProduct from './pages/TrackSingleProduct';
 // import TrackProduct from './pages/TrackProduct';
 import TrackOrderDetails from './pages/TrackOrderDetails';
+
 import OrderDetails from './admin/OrderDetails';
 
-import SearchResultsPage from './components/SearchResultsPage';
 
+import SearchResultsPage from './components/SearchResultsPage';
+import CliqCash from './Cliqcash/CliqCash';
+import AddGiftCard from './Cliqcash/AddGiftCard';
+import BuyGiftCard from './Cliqcash/BuyGiftCard';
+import AddressBook from './Cliqcash/AddressBook';
+import SavedPayments from './Cliqcash/SavedPayments';
+import Alerts from './Cliqcash/Alerts';
+import GiftCard from './Cliqcash/GiftCard';
+import Notifications from './Cliqcash/Notifications';
 
 
 
@@ -54,6 +63,20 @@ import ParticularProductCardDetail from "./components/particularProductCardDetai
 // import ParticularBrandCardPageDetail from "./pages/ParticularBrandCardPageDetail";
 import SizeSelector from "./pages/SizeSelector";
   
+
+
+
+
+import Footer from "./components/Footer";
+import AboutUs from "./Footerpages/AboutUs";
+import Careers from "./Footerpages/Careers";
+
+import PrivacyPolicy from "./Footerpages/PrivacyPolicy";
+
+
+
+
+
 
 
 
@@ -122,11 +145,19 @@ function App() {
               <Route path="/admin/add-product" element={<AddProduct />} />
               <Route path="/admin/manage-orders" element={<ManageOrders />} />
               <Route path="/track-orders" element={<TrackOrders />} />
+              <Route path="/admin/AdminGiftCardForm" element={<AdminGiftCardForm />} />
               {/* <Route path="/admin/manage-users" element={<AdminUsers />} /> */}
               {/* <Route path="/track-product/:orderId/:productId" element={<TrackSingleProduct />} /> */}
               {/* <Route path="/track-product/:orderId/:productId" element={<TrackProduct />} /> */}
 <Route path="/track-order/:id" element={<TrackOrderDetails />} />
-
+<Route path="/cliq-cash" element={<CliqCash />} />
+<Route path="/add-gift-card" element={<AddGiftCard />} />
+<Route path="/buy-gift-card" element={<BuyGiftCard />} />
+<Route path="/address-book" element={<AddressBook />} />
+<Route path="/saved-payments" element={<SavedPayments />} />
+<Route path="/alerts" element={<Alerts />} />
+<Route path="/gift-card" element={<GiftCard />} />
+<Route path="/notifications" element={<Notifications />} />
 
 
 
@@ -137,7 +168,40 @@ function App() {
 
 
 
+
+
+
+               <Route path="/about-us" element={<AboutUs />} />
+                <Route path="/careers" element={<Careers />} />
+                <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+
+
+
+
+
+
+                
+
+
+
+                
+                
+               
+          
+
+
+
+
+
+
+
+
               
+
+
+
+
+             
 
 
 

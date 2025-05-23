@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 
+
+
 const authRoutes = require('./routes/authRoutes');
 const productRoutes = require("./routes/productRoutes");
 const categoryRoutes = require('./routes/categoryRoutes');
@@ -12,7 +14,7 @@ const adminRoutes = require('./routes/adminRoutes');
 
 const stripeRoutes = require('./routes/stripe');
 
-
+const giftCardRoutes = require('./routes/giftCardRoutes');
 
 
 
@@ -43,6 +45,8 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/admin', adminRoutes); // Admin login route
 
 app.use('/api/stripe', stripeRoutes);
+
+app.use('/api/giftcards', giftCardRoutes);
 
 
 // DB Connection and Server Start

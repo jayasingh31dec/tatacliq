@@ -34,28 +34,28 @@ function ProductCard({ product }) {
   };
 
   return (
-    <Link to={`/product/${product._id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-      <div className="card h-100 shadow-sm position-relative" style={{ cursor: 'pointer' }}>
-        
-        {/* Wishlist + Cart */}
-        <div className="position-absolute top-0 end-0 m-2 z-1" onClick={(e) => e.stopPropagation()}>
-          {!product.outOfStock && <ProductButtonCard product={product} />}
-        </div>
+    <div className="card h-100 shadow-sm position-relative" style={{ cursor: 'pointer' }}>
+      
+      {/* Wishlist + Cart */}
+      <div className="position-absolute top-0 end-0 m-2 z-1" onClick={(e) => e.stopPropagation()}>
+        {!product.outOfStock && <ProductButtonCard product={product} />}
+      </div>
 
-        {/* Stock Status */}
-        {product.outOfStock && (
-          <p style={{ color: "red", position: "absolute", bottom: "10px", left: "10px", paddingLeft: "16px" }}>
-            Out of Stock!
-          </p>
-        )}
-        {!product.outOfStock && product.limitedItem && (
-          <p style={{ color: "red", position: "absolute", bottom: "10px", left: "10px", paddingLeft: "16px" }}>
-            Limited stock!
-          </p>
-        )}
+      {/* Stock Status */}
+      {product.outOfStock && (
+        <p style={{ color: "red", position: "absolute", bottom: "10px", left: "10px", paddingLeft: "16px" }}>
+          Out of Stock!
+        </p>
+      )}
+      {!product.outOfStock && product.limitedItem && (
+        <p style={{ color: "red", position: "absolute", bottom: "10px", left: "10px", paddingLeft: "16px" }}>
+          Limited stock!
+        </p>
+      )}
 
-        {/* Image & Arrows */}
-        <div className="image-container" style={{ position: "relative" }}>
+      {/* Image & Arrows wrapped in Link */}
+      <div className="image-container" style={{ position: "relative" }}>
+        <Link to={`/product/${product._id}`}>
           <img
             src={product.images?.[currentImageIndex] || product.image}
             alt={product.name}
@@ -67,82 +67,82 @@ function ProductCard({ product }) {
               borderTopRightRadius: "10px",
             }}
           />
-          {product.images?.length > 1 && (
-            <>
-              <FaChevronLeft
-                onClick={(e) => {
-                  e.preventDefault(); e.stopPropagation();
-                  handleImageChange("left");
-                }}
-                className="image-arrow arrow-left"
-              />
-              <FaChevronRight
-                onClick={(e) => {
-                  e.preventDefault(); e.stopPropagation();
-                  handleImageChange("right");
-                }}
-                className="image-arrow arrow-right"
-              />
-            </>
-          )}
-        </div>
-
-        {/* Dots */}
+        </Link>
         {product.images?.length > 1 && (
-          <div style={{ display: "flex", justifyContent: "right" }}>
-            {product.images.map((_, dotIndex) => (
-              <div
-                key={dotIndex}
-                style={{
-                  width: "5px",
-                  height: "5px",
-                  borderRadius: "50%",
-                  backgroundColor: currentImageIndex === dotIndex ? "#333" : "#ccc",
-                  margin: "0 4px",
-                  cursor: "pointer",
-                }}
-                onClick={(e) => {
-                  e.preventDefault(); e.stopPropagation();
-                  setCurrentImageIndex(dotIndex);
-                }}
-              ></div>
-            ))}
-          </div>
+          <>
+            <FaChevronLeft
+              onClick={(e) => {
+                e.preventDefault(); e.stopPropagation();
+                handleImageChange("left");
+              }}
+              className="image-arrow arrow-left"
+            />
+            <FaChevronRight
+              onClick={(e) => {
+                e.preventDefault(); e.stopPropagation();
+                handleImageChange("right");
+              }}
+              className="image-arrow arrow-right"
+            />
+          </>
         )}
+      </div>
 
-        {/* Product Info */}
-        <div className="card-body">
-          <h5 className="card-title">{product.name}</h5>
-          <p className="card-text" style={{ color: "#555" }}>{product.description}</p>
+      {/* Dots */}
+      {product.images?.length > 1 && (
+        <div style={{ display: "flex", justifyContent: "right" }}>
+          {product.images.map((_, dotIndex) => (
+            <div
+              key={dotIndex}
+              style={{
+                width: "5px",
+                height: "5px",
+                borderRadius: "50%",
+                backgroundColor: currentImageIndex === dotIndex ? "#333" : "#ccc",
+                margin: "0 4px",
+                cursor: "pointer",
+              }}
+              onClick={(e) => {
+                e.preventDefault(); e.stopPropagation();
+                setCurrentImageIndex(dotIndex);
+              }}
+            ></div>
+          ))}
+        </div>
+      )}
 
-          {/* Price */}
-          {product.discountPrice ? (
-            <p>
-              <span style={{ textDecoration: "line-through", color: "#888" }}>₹{product.price}</span>
-              &nbsp;<span style={{ fontWeight: "bold", color: "green" }}>₹{product.discountPrice}</span>
-              &nbsp;
-              {product.discountPercent && (
-                <span style={{ color: "red", fontSize: "0.85rem" }}>({product.discountPercent}% OFF)</span>
-              )}
-            </p>
-          ) : (
-            <p style={{ fontWeight: "bold" }}>₹{product.price}</p>
-          )}
+      {/* Product Info */}
+      <div className="card-body">
+        <h5 className="card-title">{product.name}</h5>
+        <p className="card-text" style={{ color: "#555" }}>{product.description}</p>
 
-          {/* Rating */}
-          <p style={{ fontSize: "0.9rem", display: "flex", alignItems: "center", gap: "5px" }}>
-            {product.rating ? (
-              <>
-                <span style={{ display: "flex" }}>{renderStars(product.rating)}</span>
-                <span style={{ marginLeft: "5px", color: "#555" }}>{product.rating} / 5</span>
-              </>
-            ) : (
-              "No rating"
+        {/* Price */}
+        {product.discountPrice ? (
+          <p>
+            <span style={{ textDecoration: "line-through", color: "#888" }}>₹{product.price}</span>
+            &nbsp;<span style={{ fontWeight: "bold", color: "green" }}>₹{product.discountPrice}</span>
+            &nbsp;
+            {product.discountPercent && (
+              <span style={{ color: "red", fontSize: "0.85rem" }}>({product.discountPercent}% OFF)</span>
             )}
           </p>
-        </div>
+        ) : (
+          <p style={{ fontWeight: "bold" }}>₹{product.price}</p>
+        )}
+
+        {/* Rating */}
+        <p style={{ fontSize: "0.9rem", display: "flex", alignItems: "center", gap: "5px" }}>
+          {product.rating ? (
+            <>
+              <span style={{ display: "flex" }}>{renderStars(product.rating)}</span>
+              <span style={{ marginLeft: "5px", color: "#555" }}>{product.rating} / 5</span>
+            </>
+          ) : (
+            "No rating"
+          )}
+        </p>
       </div>
-    </Link>
+    </div>
   );
 }
 

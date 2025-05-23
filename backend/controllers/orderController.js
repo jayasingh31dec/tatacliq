@@ -16,7 +16,7 @@ const User = require('../models/User');
 exports.createOrder = async (req, res) => {
   try {
     const { productId, quantity, address, paymentMethod } = req.body;
-     // ✅ YAHAN LAGAO
+   
     console.log('Payment Method from frontend:', paymentMethod);
     const userId = req.user.id;
 

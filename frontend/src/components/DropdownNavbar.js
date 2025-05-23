@@ -181,9 +181,9 @@ function DropdownNavbar() {
                         <li key={brand.slug}>
                           <Link
                             to={`/brand/${brand.slug}`}
-                            className="dropdown-item-label fw-bold"
+                            className="dropdown-item-label custom-link"
                           >
-                            <i className="bi bi-award"></i> {brand.name}
+                            {brand.name}
                           </Link>
                         </li>
                       ))}
