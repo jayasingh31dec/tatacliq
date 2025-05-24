@@ -137,10 +137,10 @@ const Footer = () => {
           <div className="col-md-6 mb-3">
             <h5 className="fw-bold">Follow Us</h5>
             <div className="d-flex gap-3 fs-4">
-              <a href="#" className="text-light"><i className="bi bi-facebook"></i></a>
-              <a href="#" className="text-light"><i className="bi bi-instagram"></i></a>
-              <a href="#" className="text-light"><i className="bi bi-twitter-x"></i></a>
-              <a href="#" className="text-light"><i className="bi bi-youtube"></i></a>
+              <a href="https://www.facebook.com/" className="text-light"><i className="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/" className="text-light"><i className="bi bi-instagram"></i></a>
+              <a href="https://x.com/" className="text-light"><i className="bi bi-twitter-x"></i></a>
+              <a href="https://www.youtube.com/" className="text-light"><i className="bi bi-youtube"></i></a>
             </div>
           </div>
 

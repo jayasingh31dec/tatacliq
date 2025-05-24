@@ -183,23 +183,23 @@ function AddProduct() {
           ))}
         </select>
 
-        {/* ✅ Dynamic Sizes */}
+        {/*  Dynamic Sizes */}
         <div className="multi-checkbox">
-          <label>Sizes ({formData.sizes.length} selected):</label>
-          {availableSizes.map(size => (
-            <label key={size}>
-              <input
-                type="checkbox"
-                name="sizes"
-                value={size}
-                checked={formData.sizes.includes(size)}
-                onChange={handleChange}
-              /> {size}
-            </label>
-          ))}
-        </div>
-
-
+  <label>Sizes ({formData.sizes.length} selected):</label>
+  <div className="checkbox-grid">
+    {availableSizes.map(size => (
+      <label key={size}>
+        <input
+          type="checkbox"
+          name="sizes"
+          value={size}
+          checked={formData.sizes.includes(size)}
+          onChange={handleChange}
+        /> {size}
+      </label>
+    ))}
+  </div>
+</div>
 
 
 
@@ -209,30 +209,30 @@ function AddProduct() {
 
 
         {/* ✅ Multi-select Colors */}
-        <div className="multi-checkbox">
+       <div className="multi-checkbox">
   <label>Colors ({formData.color.length} selected):</label>
-  {availableColors.map(color => (
-    <label key={color}>
-      <input
-        type="checkbox"
-        name="color"
-        value={color}
-        checked={formData.color.includes(color)}
-        onChange={(e) => {
-          const { value, checked } = e.target;
-          setFormData((prev) => ({
-            ...prev,
-            color: checked
-              ? [...prev.color, value]
-              : prev.color.filter(c => c !== value)
-          }));
-        }}
-      />
-      {color}
-    </label>
-  ))}
+  <div className="checkbox-grid">
+    {availableColors.map(color => (
+      <label key={color}>
+        <input
+          type="checkbox"
+          name="color"
+          value={color}
+          checked={formData.color.includes(color)}
+          onChange={(e) => {
+            const { value, checked } = e.target;
+            setFormData((prev) => ({
+              ...prev,
+              color: checked
+                ? [...prev.color, value]
+                : prev.color.filter(c => c !== value)
+            }));
+          }}
+        /> {color}
+      </label>
+    ))}
+  </div>
 </div>
-
 
 
 

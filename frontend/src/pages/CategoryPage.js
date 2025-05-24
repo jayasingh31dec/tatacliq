@@ -1,39 +1,57 @@
-import React from 'react';
+
+
+
+
+
+
+
+
+
+
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ProductCard from '../components/ProductCard';
 
 function CategoryPage() {
   const { categoryName } = useParams();
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Dummy products – aap yeh data backend/API se bhi laa sakte ho
-  const products = [
-    { id: 1, name: 'Product 1', category: 'women', price: 999, image: 'https://via.placeholder.com/150' },
-    { id: 2, name: 'Product 2', category: 'women', price: 799, image: 'https://via.placeholder.com/150' },
-    { id: 3, name: 'Product 3', category: 'men', price: 499, image: 'https://via.placeholder.com/150' },
-    { id: 4, name: 'Product 4', category: 'electronics', price: 1999, image: 'https://via.placeholder.com/150' },
-  ];
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(`http://localhost:3000/api/products?section=${categoryName}`);
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error('Error loading products:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  // Filter products based on categoryName from URL
-  const filteredProducts = products.filter(p => p.category.toLowerCase() === categoryName.toLowerCase());
+    fetchProducts();
+  }, [categoryName]);
 
   return (
     <div className="container my-4">
       <h3 className="text-capitalize mb-4">{categoryName} Products</h3>
-      <div className="row">
-        {filteredProducts.map(product => (
-          <div className="col-md-3 mb-4" key={product.id}>
-            <div className="card h-100 shadow-sm">
-              <img src={product.image} className="card-img-top" alt={product.name} />
-              <div className="card-body text-center">
-                <h5 className="card-title">{product.name}</h5>
-                <p className="card-text">₹{product.price}</p>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className="row">
+          {products.length > 0 ? (
+            products.map((product) => (
+              <div className="col-md-3 mb-4" key={product._id}>
+                <ProductCard product={product} />
               </div>
-            </div>
-          </div>
-        ))}
-        {filteredProducts.length === 0 && (
-          <p>No products found in this category.</p>
-        )}
-      </div>
+            ))
+          ) : (
+            <p>No products found in this section.</p>
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -43,4 +61,13 @@ export default CategoryPage;
 
 
 
-// ye first card ke liy detal rkhta hai
+
+
+
+
+
+
+
+
+
+

@@ -66,28 +66,29 @@ router.post(
   }
 );
 
-// GET all products (Optionally filter by brand)
+
+
+
+
+// GET all products (Optionally filter by brand, section, category, subcategory)
 router.get("/", async (req, res) => {
   try {
-    const brand = req.query.brand;
-    let products;
+    const { brand, section, category, subcategory, item } = req.query;
+    let query = {};
 
-    if (brand) {
-      products = await Product.find({
-        brand: { $regex: new RegExp(`^${brand}$`, "i") },
-      });
-    } else {
-      products = await Product.find();
-    }
+    if (brand) query.brand = new RegExp(`^${brand}$`, "i");
+    if (section) query.section = new RegExp(`^${section}$`, "i");
+    if (category) query.category = new RegExp(`^${category}$`, "i");
+    if (subcategory) query.subcategory = new RegExp(`^${subcategory}$`, "i");
+    if (item) query.item = new RegExp(`^${item}$`, "i");
 
+    const products = await Product.find(query);
     res.json(products);
   } catch (error) {
     console.error(error);  // Log error for debugging
     res.status(500).json({ message: error.message });
   }
 });
-
-
 
 
 
