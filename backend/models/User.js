@@ -7,6 +7,16 @@ const userSchema = new mongoose.Schema({
    address: { type: String },
 
 
+
+
+
+
+
+
+
+
+  //GIT CARD KE LIY ADD KIYA HAI 
+
    walletBalance: {
     type: Number,
     default: 0,

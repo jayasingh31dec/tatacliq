@@ -48,6 +48,16 @@ import OrderDetails from './admin/OrderDetails';
 
 
 import SearchResultsPage from './components/SearchResultsPage';
+
+
+
+
+
+
+
+
+
+
 import CliqCash from './Cliqcash/CliqCash';
 import AddGiftCard from './Cliqcash/AddGiftCard';
 import BuyGiftCard from './Cliqcash/BuyGiftCard';
@@ -55,7 +65,16 @@ import AddressBook from './Cliqcash/AddressBook';
 import SavedPayments from './Cliqcash/SavedPayments';
 import Alerts from './Cliqcash/Alerts';
 import GiftCard from './Cliqcash/GiftCard';
-import Notifications from './Cliqcash/Notifications';
+import Wallet from './Cliqcash/Wallet';
+
+
+
+
+
+
+
+
+
 
 
 
@@ -157,8 +176,7 @@ function App() {
 <Route path="/saved-payments" element={<SavedPayments />} />
 <Route path="/alerts" element={<Alerts />} />
 <Route path="/gift-card" element={<GiftCard />} />
-<Route path="/notifications" element={<Notifications />} />
-
+<Route path="/Wallet" element={<Wallet />} />
 
 
               <Route path="/admin/orders/:id" element={<OrderDetails />} />

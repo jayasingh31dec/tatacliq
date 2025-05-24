@@ -5,7 +5,7 @@ const cors = require('cors');
 
 
 
-
+const giftCardRoutes = require('./routes/giftCardRoutes');
 const authRoutes = require('./routes/authRoutes');
 const productRoutes = require("./routes/productRoutes");
 const categoryRoutes = require('./routes/categoryRoutes');
@@ -14,7 +14,7 @@ const adminRoutes = require('./routes/adminRoutes');
 
 const stripeRoutes = require('./routes/stripe');
 
-const giftCardRoutes = require('./routes/giftCardRoutes');
+
 
 
 

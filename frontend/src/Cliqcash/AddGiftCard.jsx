@@ -1,68 +1,145 @@
-import React, { useState } from 'react';
-import './AddGiftCard.css'; // Optional CSS file for additional styling
+// import React, { useState } from 'react';
+// import axios from 'axios';
 
-function AddGiftCard() {
-  const [cardNumber, setCardNumber] = useState('');
+// function AddGiftCard() {
+//   const [code, setCode] = useState('');
+//   const [pin, setPin] = useState('');
+//   const [message, setMessage] = useState('');
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     // Simple validation
+//     if (!/^\d{16}$/.test(code)) {
+//       setMessage('Code must be 16 digits.');
+//       return;
+//     }
+//     if (!/^\d{4}$/.test(pin)) {
+//       setMessage('PIN must be 4 digits.');
+//       return;
+//     }
+
+//     try {
+//       const token = localStorage.getItem('token');
+//       const res = await axios.post(
+//         'http://localhost:3000/api/giftcards/redeem',
+//         { code: code.trim(), pin: pin.trim() },
+//         { headers: { Authorization: `Bearer ${token}` } }
+//       );
+//       setMessage('Gift card redeemed: ₹' + res.data.amount);
+//       setCode('');
+//       setPin('');
+//       if (onRedeem) onRedeem(); // <-- Refresh wallet balance!
+//     } catch (err) {
+//       setMessage(err.response?.data?.message || 'Error redeeming card');
+//     }
+//   };
+//   return (
+//     <form onSubmit={handleSubmit} className="mb-2">
+//       <input
+//         type="text"
+//         placeholder="16-digit Code"
+//         value={code}
+//         onChange={(e) => setCode(e.target.value)}
+//         maxLength={16}
+//         className="form-control mb-1"
+//       />
+//       <input
+//         type="password"
+//         placeholder="4-digit PIN"
+//         value={pin}
+//         onChange={(e) => setPin(e.target.value)}
+//         maxLength={4}
+//         className="form-control mb-1"
+//       />
+//       <button type="submit"className="btn btn-primary">Redeem</button>
+//       {message && <div className="mt-2">{message}</div>}
+//     </form>
+//   );
+// }
+
+// export default AddGiftCard;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React, { useState } from 'react';
+import axios from 'axios';
+
+function AddGiftCard({ onRedeem }) {
+  const [code, setCode] = useState('');
   const [pin, setPin] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!/^\d{16}$/.test(code)) {
+      setMessage('Code must be 16 digits.');
+      return;
+    }
+    if (!/^\d{4}$/.test(pin)) {
+      setMessage('PIN must be 4 digits.');
+      return;
+    }
 
-    // Simulated validation
-    if (cardNumber && pin) {
-      setMessage('🎉 Gift card added successfully!');
-      // Later you can send this to backend via API call
-      setCardNumber('');
+    try {
+      const token = localStorage.getItem('token');
+      const res = await axios.post(
+        'http://localhost:3000/api/giftcards/redeem',
+        { code: code.trim(), pin: pin.trim() },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      setMessage('Gift card redeemed: ₹' + res.data.amount);
+      setCode('');
       setPin('');
-    } else {
-      setMessage('❗ Please enter both Gift Card Number and PIN.');
+      if (onRedeem) onRedeem(); // <-- Now works!
+    } catch (err) {
+      setMessage(err.response?.data?.message || 'Error redeeming card');
     }
   };
 
   return (
-    <div className="container mt-4">
-      <div className="card">
-        <div className="card-body">
-          <h3 className="card-title mb-4">Add Gift Card</h3>
-
-          <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label htmlFor="cardNumber" className="form-label">Gift Card Number</label>
-              <input
-                type="text"
-                id="cardNumber"
-                className="form-control"
-                value={cardNumber}
-                onChange={(e) => setCardNumber(e.target.value)}
-                placeholder="Enter 16-digit card number"
-              />
-            </div>
-
-            <div className="mb-3">
-              <label htmlFor="pin" className="form-label">PIN</label>
-              <input
-                type="password"
-                id="pin"
-                className="form-control"
-                value={pin}
-                onChange={(e) => setPin(e.target.value)}
-                placeholder="Enter 4-digit PIN"
-              />
-            </div>
-
-            <button type="submit" className="btn btn-dark">Add to Wallet</button>
-          </form>
-
-          {message && (
-            <div className="alert alert-info mt-3" role="alert">
-              {message}
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
+    <form onSubmit={handleSubmit} className="mb-2">
+      <input
+        type="text"
+        placeholder="16-digit Code"
+        value={code}
+        onChange={(e) => setCode(e.target.value)}
+        maxLength={16}
+        className="form-control mb-1"
+      />
+      <input
+        type="password"
+        placeholder="4-digit PIN"
+        value={pin}
+        onChange={(e) => setPin(e.target.value)}
+        maxLength={4}
+        className="form-control mb-1"
+      />
+      <button type="submit" className="btn btn-primary">Redeem</button>
+      {message && <div className="mt-2">{message}</div>}
+    </form>
   );
 }
 
 export default AddGiftCard;
+
+
+
