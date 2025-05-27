@@ -18,7 +18,7 @@ const categories = [
   { title: 'KIDSWEAR', image: 'https://assets.tatacliq.com/medias/sys_master/images/64927656706078.png', link: '/category/KIDSWEAR' },
   { title: 'JEWELLERY', image: 'https://assets.tatacliq.com/medias/sys_master/images/64927656771614.png', link: '/category/JEWELLERY' },
   { title: 'BEAUTY', image: 'https://assets.tatacliq.com/medias/sys_master/images/64927656837150.png', link: '/category/BEAUTY' },
-  { title: 'HOME & LIVING', image: 'https://assets.tatacliq.com/medias/sys_master/images/64927656902686.png', link: '/category/HOME%20%26%20LIVING' },
+  { title: 'HOME & LIVING', image: 'https://assets.tatacliq.com/medias/sys_master/images/64927656902686.png', link: '/category/HOME & LIVING' },
   { title: 'HEALTHY LIVING', image: 'https://assets.tatacliq.com/medias/sys_master/images/64927673614366.png', link: '/category/HEALTHY%20LIVING' },
   { title: 'GADGETS', image: 'https://assets.tatacliq.com/medias/sys_master/images/64927656968222.png', link: '/category/GADGETS' },
 ];
@@ -64,17 +64,17 @@ const SquareBrands = [
 
 const CliqAllStars = [
   { name: 'Varanga', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466237470.png' },
-  { name: 'Hoversole', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466303006.png' },
-  { name: `03`, image: 'https://assets.tatacliq.com/medias/sys_master/images/65236482523166.png' },
-  { name: '04', image: 'https://assets.tatacliq.com/medias/sys_master/images/63588841848862.jpg' },
-  { name: '1', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466761758.png' },
-  { name: '2', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466827294.png' },
-  { name: `3`, image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466892830.png' },
-  { name: '4', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466958366.png' },
-  { name: '5', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236467286046.png' },
-  { name: '6', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236467220510.png' },
-  { name: `7`, image: 'https://assets.tatacliq.com/medias/sys_master/images/65236467351582.png' },
-  { name: '8', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236467417118.png' },
+  { name: 'Hoversoul', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466303006.png' },
+  { name: `Cover Story`, image: 'https://assets.tatacliq.com/medias/sys_master/images/65236482523166.png' },
+  { name: 'Linen Club', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466434078.png' },
+  { name: 'Fablestreet', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466761758.png' },
+  { name: 'Timex', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466827294.png' },
+  { name: `D'Decor`, image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466892830.png' },
+  { name: 'Tommy Hilfiger', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236466958366.png' },
+  // { name: '5', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236467286046.png' },
+  // { name: '6', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236467220510.png' },
+  // { name: `7`, image: 'https://assets.tatacliq.com/medias/sys_master/images/65236467351582.png' },
+  // { name: '8', image: 'https://assets.tatacliq.com/medias/sys_master/images/65236467417118.png' },
   
 
 ];

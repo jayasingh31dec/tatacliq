@@ -37,7 +37,7 @@ function TopNavbar() {
 
   const handleLogout = () => {
     localStorage.removeItem('user');
-    localStorage.removeItem('token'); // optional
+    localStorage.removeItem('token'); 
     setUserName(null);
     navigate('/');
   };

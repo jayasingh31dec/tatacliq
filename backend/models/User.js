@@ -13,8 +13,6 @@ const userSchema = new mongoose.Schema({
 
 
 
-
-
   //GIT CARD KE LIY ADD KIYA HAI 
 
    walletBalance: {
