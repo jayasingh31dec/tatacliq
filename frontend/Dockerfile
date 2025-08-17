@@ -3,24 +3,23 @@ FROM node:18 as build
 
 WORKDIR /app
 
-# Copy package.json and install dependencies
+# Copy package.json first
 COPY package*.json ./
-RUN npm install
 
-# Copy the rest of the frontend code
+# Install dependencies without scripts that hit backend
+RUN npm install --ignore-scripts
+
+# Copy rest of code
 COPY . .
+
+# Copy Docker env file
+COPY .env.docker .env
 
 # Build React app
 RUN npm run build
 
-# Production Stage (serve frontend using Nginx)
+# Production Stage - Nginx
 FROM nginx:alpine
-
-# Copy build files to Nginx
 COPY --from=build /app/build /usr/share/nginx/html
-
-# Expose port 80
 EXPOSE 80
-
-# Run Nginx
 CMD ["nginx", "-g", "daemon off;"]
