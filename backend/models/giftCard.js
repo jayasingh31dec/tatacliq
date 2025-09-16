@@ -48,4 +48,6 @@ const giftCardSchema = new mongoose.Schema({
   expiresAt: { type: Date, required: true },
 }, { timestamps: true });
 
+
+
 module.exports = mongoose.model('GiftCard', giftCardSchema);
