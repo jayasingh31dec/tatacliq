@@ -24,7 +24,7 @@ function AdminLogin() {
 
       if (response.ok) {
         // Save the JWT token to localStorage
-        localStorage.setItem("adminToken", response.data.token);
+        localStorage.setItem("adminToken", data.token);
 
         // Redirect to the admin dashboard
         navigate('/admin/dashboard');
