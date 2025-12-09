@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import './StripePayment.css'; // Import your custom CSS for styling
+import { API_BASE_URL } from '../config';
 
 function StripePayment({ amount, onSuccess }) {
   const stripe = useStripe();
@@ -8,7 +9,7 @@ function StripePayment({ amount, onSuccess }) {
   const [clientSecret, setClientSecret] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/stripe/create-payment-intent', {
+    fetch(`${API_BASE_URL}/api/stripe/create-payment-intent`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ amount }),

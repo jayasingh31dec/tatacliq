@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import './TrackOrders.css';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 
 function TrackOrders() {
   const [orders, setOrders] = useState([]);
@@ -18,7 +19,7 @@ function TrackOrders() {
       return;
     }
 
-    fetch('http://localhost:3000/api/orders/my', {
+    fetch(`${API_BASE_URL}/api/orders/my`, {
       headers: {
         Authorization: `Bearer ${token}`
       }

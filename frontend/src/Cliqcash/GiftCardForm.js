@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 const GiftCardForm = ({ onApply }) => {
   const [code, setCode] = useState('');
@@ -9,12 +10,12 @@ const GiftCardForm = ({ onApply }) => {
 
   useEffect(() => {
     const fetchGiftCards = async () => {
-      const { data } = await axios.get('http://localhost:3000/api/giftcards/available');
+      const { data } = await axios.get(`${API_BASE_URL}/api/giftcards/available`);
       setGiftCards(data);
     };
     const fetchWallet = async () => {
       try {
-        const { data } = await axios.get('http://localhost:3000/api/users/wallet', {
+        const { data } = await axios.get(`${API_BASE_URL}/api/users/wallet`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
@@ -31,7 +32,7 @@ const GiftCardForm = ({ onApply }) => {
   const applyGiftCard = async (selectedCode) => {
     try {
       const { data } = await axios.post(
-        'http://localhost:3000/api/giftcards/redeem',
+        `${API_BASE_URL}/api/giftcards/redeem`,
         { code: selectedCode || code },
         {
           headers: {

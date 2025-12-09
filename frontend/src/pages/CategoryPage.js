@@ -11,6 +11,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
+import { API_BASE_URL } from '../config';
 
 function CategoryPage() {
   const { categoryName } = useParams();
@@ -21,7 +22,7 @@ function CategoryPage() {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:3000/api/products?section=${categoryName}`);
+        const response = await fetch(`${API_BASE_URL}/api/products?section=${categoryName}`);
         const data = await response.json();
         setProducts(data);
       } catch (error) {

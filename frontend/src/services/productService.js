@@ -1,7 +1,8 @@
 // src/services/productService.js
 import axios from "axios";
+import { API_BASE_URL } from '../config';
 
-const BASE_URL = "http://localhost:3000/api/products";
+const BASE_URL = `${API_BASE_URL}/api/products`;
 
 // POST - Add new product
 export const addProduct = async (productData) => {

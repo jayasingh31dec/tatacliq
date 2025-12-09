@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
+import { API_BASE_URL } from '../config';
 
 function ProductGrid() {
   const [products, setProducts] = useState([]);
@@ -9,7 +10,7 @@ function ProductGrid() {
   const [error, setError] = useState(null);     // Optional error state
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/products')
+    fetch(`${API_BASE_URL}/api/products`)
       .then((res) => {
         if (!res.ok) {
           throw new Error('Failed to fetch products');

@@ -112,6 +112,7 @@ import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
 import './SearchResultsPage.css';
+import { API_BASE_URL } from '../config';
 
 const SearchResultsPage = () => {
   const location = useLocation();
@@ -124,7 +125,7 @@ const SearchResultsPage = () => {
       if (!query) return;
       setLoading(true);
       try {
-        const res = await axios.get(`http://localhost:3000/api/products/search?query=${query}`);
+        const res = await axios.get(`${API_BASE_URL}/api/products/search?query=${query}`);
         setResults(res.data);
       } catch (error) {
         console.error("Search failed:", error);

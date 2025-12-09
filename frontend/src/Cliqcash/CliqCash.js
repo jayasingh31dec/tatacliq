@@ -162,7 +162,9 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Wallet from './Wallet';
 import AddGiftCard from './AddGiftCard';
+
 import './CliqCash.css'; // optional
+import { API_BASE_URL } from '../config';
 
 function CliqCash() {
   const user = JSON.parse(localStorage.getItem('user')) || {};
@@ -174,7 +176,7 @@ function CliqCash() {
   const fetchBalance = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('http://localhost:3000/api/giftcards/wallet', {
+      const res = await fetch(`${API_BASE_URL}/giftcards/wallet`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();

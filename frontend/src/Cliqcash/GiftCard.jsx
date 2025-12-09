@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { API_BASE_URL } from '../config';
 
 function GiftCard() {
   const [available, setAvailable] = useState([]);
@@ -9,7 +10,7 @@ function GiftCard() {
     const token = localStorage.getItem('token');
     if (!token) return;
 
-    fetch('http://localhost:3000/api/giftcards/my', {
+    fetch(`${API_BASE_URL}/api/giftcards/my`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())

@@ -82,6 +82,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 function AddGiftCard({ onRedeem }) {
   const [code, setCode] = useState('');
@@ -102,7 +103,7 @@ function AddGiftCard({ onRedeem }) {
     try {
       const token = localStorage.getItem('token');
       const res = await axios.post(
-        'http://localhost:3000/api/giftcards/redeem',
+        `${API_BASE_URL}/api/giftcards/redeem`,
         { code: code.trim(), pin: pin.trim() },
         { headers: { Authorization: `Bearer ${token}` } }
       );

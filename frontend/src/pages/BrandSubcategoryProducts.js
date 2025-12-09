@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
+import { API_BASE_URL } from '../config';
 
 function BrandSubcategoryProducts() {
   const { brandSlug, subSlug } = useParams();
@@ -11,7 +12,7 @@ function BrandSubcategoryProducts() {
   useEffect(() => {
     const fetchFilteredProducts = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/products?brand=${brandSlug}&subcategory=${subSlug}`);
+        const response = await fetch(`${API_BASE_URL}/api/products?brand=${brandSlug}&subcategory=${subSlug}`);
 
         
 

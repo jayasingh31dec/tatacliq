@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { API_BASE_URL } from '../config';
 
 function SavedPayments() {
   const [payments, setPayments] = useState([]);
@@ -8,7 +9,7 @@ function SavedPayments() {
   useEffect(() => {
     const token = localStorage.getItem('userToken'); // adjust key as per your app
 
-    fetch('http://localhost:3000/api/users/payments', {
+    fetch(`${API_BASE_URL}/api/users/payments`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

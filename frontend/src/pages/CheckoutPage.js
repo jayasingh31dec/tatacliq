@@ -492,6 +492,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import StripePayment from '../components/StripePayment';
 import './CheckoutPage.css';
+import { API_BASE_URL } from '../config';
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
@@ -532,7 +533,7 @@ function CheckoutPage() {
       if (token) {
         setWalletLoading(true);
         try {
-          const res = await fetch('http://localhost:3000/api/giftcards/wallet', {
+          const res = await fetch(`${API_BASE_URL}/api/giftcards/wallet`, {
             headers: { Authorization: `Bearer ${token}` }
           });
           const data = await res.json();
@@ -565,7 +566,7 @@ function CheckoutPage() {
 
     // 1. Deduct wallet if selected
     if (useWallet && walletUsed > 0) {
-      const res = await fetch('http://localhost:3000/api/giftcards/deduct', {
+      const res = await fetch(`${API_BASE_URL}/api/giftcards/deduct`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -600,7 +601,7 @@ function CheckoutPage() {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/api/orders', {
+      const response = await fetch(`${API_BASE_URL}/api/orders`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

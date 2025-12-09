@@ -162,6 +162,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { IoStarSharp, IoStarHalfSharp, IoStarOutline } from "react-icons/io5";
 import { useCart } from '../contexts/CartContext';
+import { API_BASE_URL } from '../config';
 
 function ParticularProductCardDetail() {
   const { id } = useParams();
@@ -173,7 +174,7 @@ function ParticularProductCardDetail() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/products/${id}`);
+        const res = await axios.get(`${API_BASE_URL}/api/products/${id}`);
         setProduct(res.data);
       } catch (err) {
         console.error('Failed to load product:', err);

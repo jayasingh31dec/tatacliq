@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Fuse from 'fuse.js';
 import ProductCard from '../components/ProductCard'; // Ensure correct path
+import { API_BASE_URL } from '../config';
+
 
 const SearchResultsPage = () => {
   const { query } = useParams();
@@ -14,7 +16,7 @@ const SearchResultsPage = () => {
     // Fetch all products from the backend once
     const fetchAllProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/products'); // Use endpoint that returns all products
+        const res = await axios.get(`${API_BASE_URL}/api/products`); // Use endpoint that returns all products
         setAllProducts(res.data);
         setLoading(false);
       } catch (error) {

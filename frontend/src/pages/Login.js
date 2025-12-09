@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { loginUser } from './services';
 import { useNavigate } from 'react-router-dom'; // ✅
+import { API_BASE_URL } from '../config';
 
 function Login() {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -21,7 +22,7 @@ function Login() {
 
   try {
     // First, try user login
-    let response = await fetch('http://localhost:3000/api/login', {
+    let response = await fetch(`${API_BASE_URL}/api/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
@@ -44,7 +45,7 @@ function Login() {
     }
 
     // If user login fails, try admin login
-    response = await fetch('http://localhost:3000/api/admin/login', {
+    response = await fetch(`${API_BASE_URL}/api/admin/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),

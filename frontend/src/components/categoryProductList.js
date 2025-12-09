@@ -1,7 +1,8 @@
+import { API_BASE_URL } from '../config';
 export async function categoryProductList({ category, subcategory, item }) {
      
   try {
-    const apiUrl = `http://localhost:3000/api/categories/${category}/${subcategory}/${item}`;
+    const apiUrl = `${API_BASE_URL}/api/categories/${category}/${subcategory}/${item}`;
 
  
 

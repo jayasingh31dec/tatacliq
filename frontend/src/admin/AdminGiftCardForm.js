@@ -102,6 +102,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 const AdminGiftCardForm = () => {
   const [code, setCode] = useState('');
@@ -145,7 +146,7 @@ const AdminGiftCardForm = () => {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        'http://localhost:3000/api/giftcards/create',
+        `${API_BASE_URL}/api/giftcards/create`,
         { code, pin, amount: Number(amount), expiresAt },
         {
           headers: {

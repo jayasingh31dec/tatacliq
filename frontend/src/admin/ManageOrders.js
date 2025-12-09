@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './ManageOrders.css';
+import { API_BASE_URL } from '../config';
 
 function ManageOrders() {
   const [orders, setOrders] = useState([]);
@@ -17,7 +18,7 @@ function ManageOrders() {
 
     setLoading(true);
 
-    fetch('http://localhost:3000/api/admin/orders', {
+    fetch(`${API_BASE_URL}/api/admin/orders`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -46,7 +47,7 @@ function ManageOrders() {
   const handleStatusChange = async (orderId, newStatus) => {
     const token = localStorage.getItem('adminToken');
     try {
-      const res = await fetch(`http://localhost:3000/api/admin/orders/${orderId}/status`, {
+      const res = await fetch(`${API_BASE_URL}/api/admin/orders/${orderId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -182,6 +182,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './OrderDetails.css';
+import { API_BASE_URL } from '../config';
 
 function OrderDetails() {
   const { id } = useParams();
@@ -190,7 +191,7 @@ function OrderDetails() {
 
   useEffect(() => {
     const token = localStorage.getItem('adminToken');
-    fetch(`http://localhost:3000/api/admin/orders/${id}`, {
+    fetch(`${API_BASE_URL}/api/admin/orders/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(async res => {

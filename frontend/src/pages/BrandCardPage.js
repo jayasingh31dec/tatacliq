@@ -307,6 +307,7 @@ import ProductButtonCard from "../components/ProductButtonCard";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { IoStarSharp, IoStarHalfSharp, IoStarOutline } from "react-icons/io5";
 import "./BrandCardPage.css";
+import { API_BASE_URL } from '../config';
 
 const BrandCardPage = () => {
   const { brandName } = useParams();
@@ -326,7 +327,7 @@ const BrandCardPage = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/products?brand=${brandName}`
+          `${API_BASE_URL}/api/products?brand=${brandName}`
         );
         setProducts(response.data.map((p) => ({ ...p, currentIndex: 0 })));
         setLoading(false);

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductCard from './ProductCard';
+import { API_BASE_URL } from '../config';
 
 export default function BrandPage() {
   const { brandId } = useParams(); //
@@ -9,7 +10,7 @@ export default function BrandPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/products?brand=${brandId}`)
+      .get(`${API_BASE_URL}/api/products?brand=${brandId}`)
       .then((res) => {
         console.log("Brand products response:", res.data);
         setProducts(res.data);

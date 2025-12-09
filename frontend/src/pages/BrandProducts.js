@@ -2,13 +2,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 const BrandProducts = () => {
   const { brandName } = useParams();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/products?brand=${brandName}`)
+    axios.get(`${API_BASE_URL}/api/products?brand=${brandName}`)
       .then((res) => setProducts(res.data))
       .catch((err) => console.error("Error fetching brand products", err));
   }, [brandName]);

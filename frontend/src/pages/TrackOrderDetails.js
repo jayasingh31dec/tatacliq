@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './TrackOrderDetails.css'; // Styling ke liye
+import { API_BASE_URL } from '../config';
 
 function TrackOrderDetails() {
   const { id: orderId } = useParams();
@@ -18,7 +19,7 @@ function TrackOrderDetails() {
       return;
     }
 
-    fetch(`http://localhost:3000/api/orders/${orderId}`, {
+    fetch(`${API_BASE_URL}/api/orders/${orderId}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(async res => {
