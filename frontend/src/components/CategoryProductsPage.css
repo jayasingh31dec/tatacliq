@@ -1,0 +1,92 @@
+/* CategoryProductsPage.css */
+
+/* .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 10px;
+  } */
+  
+
+
+
+.category-page-container {
+  display: flex;
+  padding: 20px;
+}
+
+/* Left filter panel */
+.filter-panel {
+  width: 20%;
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.filter-panel h4 {
+  margin-bottom: 10px;
+}
+
+.filter-panel label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+/* Right product panel */
+.product-panel {
+  flex: 1;
+  padding-left: 20px;
+}
+
+/* Product grid styling (you already have this, just for clarity) */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+
+
+
+
+
+
+/* color filter */
+
+
+.color-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 160px; /* Optional: to wrap after ~4 items depending on size */
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
+
+.color-circle.selected {
+  border: 3px solid #000;
+}
+
+
+
+.color-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+
+
+
+/* Price range */
+
+
+
+
+

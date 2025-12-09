@@ -1,0 +1,44 @@
+
+.SquareBrand-card {
+  position: relative;
+  cursor: pointer;
+  border-radius: 25px;
+  height: 332px;
+  width: 500px;
+  background-color: white;
+  box-shadow: 0 0 8px rgb(250, 249, 249);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  margin-bottom: 70px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.SquareBrand-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 12px rgb(249, 248, 248);
+}
+
+.SquareBrand-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  padding: 0;
+  padding-top: 10px;
+  margin: 0;
+  border-radius: 0; /* ✅ No border-radius on image */
+}
+
+.SquareBrand-name {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}

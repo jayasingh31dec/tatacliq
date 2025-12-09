@@ -1,0 +1,124 @@
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  width: 250px;
+  height: 420px; /* ✅ fixed height for all cards */
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image-container {
+  height: 300px;    /* fixed height do container ko */
+  width: 100%;      /* pura width lo */
+  overflow: hidden;
+  border-radius: 8px; /* thoda rounded corner dena */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* halka shadow */
+}
+
+.product-image {
+  width: auto;    /* fixed width hatao */
+  height: auto;   /* fixed height hatao */
+  max-width: 100%;  /* image container se bada na ho */
+  max-height: 100%; /* container ke height se bada na ho */
+  object-fit: contain; /* pura image dikhe bina crop kiye */
+}
+
+
+.product-info {
+  height: 40%; /* ✅ remaining part for text */
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-info h2 {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.product-info p {
+  font-size: 13px;
+  margin: 2px 0;
+  color: #555;
+}
+
+.product-buttons {
+  display: flex;
+  justify-content: center; /* ✅ center the buttons */
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.product-buttons button {
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #444;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.product-buttons button:hover {
+  transform: scale(1.2);
+  color: #e60000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.custom-input {
+  width: 645px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-left: 17px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  
+}
+
+
+
+
+.custom-search-button {
+  background-color: #4B5563; /* Tailwind gray-600 */
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 40px;
+  padding-bottom: 6px;
+  margin-left: 5px;
+  margin-bottom: 4px;
+}
+.custom-search-button:hover {
+  background-color: #374151; /* dark gray on hover */
+}
+

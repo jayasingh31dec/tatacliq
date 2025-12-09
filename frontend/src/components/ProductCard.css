@@ -1,0 +1,25 @@
+.image-arrow {
+ position: absolute;
+  top: 50%;
+  background: rgb(250, 249, 249);
+  border-radius: 20%;
+  padding: 8px;
+  cursor: pointer;
+  display: none;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 36px;
+  color: rgba(174, 173, 173, 0.932);
+  
+}
+
+
+
+
+.arrow-left {
+  left: 10px;
+}
+
+.arrow-right {
+  right: 10px;
+}

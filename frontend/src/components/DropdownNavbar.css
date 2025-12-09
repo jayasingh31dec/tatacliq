@@ -1,0 +1,276 @@
+.dropdown-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #383434;
+    box-shadow: 0 2px 8px rgba(244, 66, 1, 0.06);
+    padding: 0.5rem 2rem;
+    position: relative;
+    z-index: 20;
+  }
+  
+  .navbar-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+  }
+  
+  .dropdown-group {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .dropdown-btn {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #333;
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 300;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  
+  .dropdown-btn.active,
+  .dropdown-btn:hover {
+    background: #e9ecef;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  
+  .dropdown-arrow {
+    margin-left: 0.5rem;
+    font-size: 0.9em;
+  }
+
+
+
+  .dropdown-hover-wrapper {
+    position: relative;
+  }
+
+
+
+  
+  .dropdown-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+  
+  .dropdown-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dropdown-list-item {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .dropdown-list-item.open,
+  .dropdown-list-item:hover {
+    background: #f1f3f5;
+  }
+  
+  .dropdown-item-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .dropdown-submenu {
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 200px;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: 8px;
+    z-index: 101;
+  }
+  
+  .dropdown-link {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+  
+  .dropdown-link:hover {
+    background: #e9ecef;
+    color: #6d76e8;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    margin-right: 10px
+
+  }
+  
+  .icon-link {
+    color: #333;
+    font-size: 1.6rem;
+    transition: color 0.2s;
+    gap:8px;
+    margin-left: 10px;
+  }
+  
+  .icon-link:hover {
+    color: #007bff;
+  }
+
+
+  .dropdown-navbar {
+    padding-left: 2rem; /* pehle 2rem tha, ab 4rem karke right le jaenge */
+    padding-right: 2rem;
+  }
+  
+
+
+  .dropdown-navbar {
+    margin-left: 1rem;
+  }
+  
+
+  .navbar-right {
+    margin-left: auto;  /* isse ye poori right side chala jaega */
+    padding-right: auto; /* thoda gap right side se */
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  /* wislist and card css */
+
+
+/* Container for right-aligned icons like Wishlist and Cart */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+/* Wrapper for each icon */
+.icon-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px; /* icon size */
+  color: #f7eeee;
+  cursor: pointer;
+}
+
+/* Common badge style */
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+ 
+  color: rgb(100, 10, 226);
+  border-radius: 50%;
+  min-width: 18px;
+  height: 18px;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  z-index: 10;
+   /* white outline to separate from icon */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

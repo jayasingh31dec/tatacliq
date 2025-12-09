@@ -1,0 +1,15 @@
+.top-bar {
+    background-color: black;
+    color: white;
+    padding: 4px 16px;           /* py-1 px-4 equivalent */
+    display: flex;               /* d-flex */
+    justify-content: flex-end;   /* justify-content-end */
+    gap: 1.5rem;                 /* gap-4 */
+    font-size: 0.875rem;         /* small text */
+  }
+  
+  .top-bar a {
+    color: white;
+    text-decoration: none;
+  }
+  

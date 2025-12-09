@@ -1,0 +1,24 @@
+.admin-dashboard {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .dashboard-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .dashboard-links .btn {
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .dashboard-links .btn:hover {
+    background-color: #0056b3;
+  }
+  
