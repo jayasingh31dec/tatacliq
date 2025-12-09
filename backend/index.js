@@ -20,13 +20,18 @@ const PORT = process.env.PORT || 3000;
 
 
 
-// Middleware
+// // Middleware
+
+
+const allowedOrigin = process.env.FRONTEND_URL || 'http://localhost:3005';
+
 app.use(
   cors({
-    origin: 'http://localhost:3005', // 👈 Frontend local URL
+    origin: allowedOrigin,
     credentials: true,
   })
 );
+
 
 
 
