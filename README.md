@@ -117,7 +117,7 @@ App will run on your configured frontend URL (for example `http://localhost:3005
 
 ### Home Page
 Main **home** page with hero banner, navbar, search, and promotional offers.  
-! [Home Page](./Homepage1.jpg)
+! [Home Page](./Homepage1.png)
 
 ### Categories & Lightning Deals
 Section showing product **categories** carousel and lightning deals on the home screen.  
