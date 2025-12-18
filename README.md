@@ -111,4 +111,42 @@ npm start
 App will run on your configured frontend URL (for example `http://localhost:3005`) and backend on `http://localhost:3000`.
 
 
+---
 
+## 🖼️ Screenshots
+
+**Home Page**
+
+![Home Page](Homepage1.jpg)
+
+**Categories & Deals**
+
+![Categories](Homepage2.jpg)
+
+**Product Listing (Filters)**
+
+![Product Listing](user3.jpg)
+
+**Product Details**
+
+![Product Details](user5.jpg)
+
+**Cart & Checkout**
+
+![Checkout](user2.jpg)
+
+**My Orders & Tracking**
+
+![Order Tracking](user2.1.jpg)
+
+**Admin Dashboard**
+
+![Admin Dashboard](AdminDashboard1.jpg)
+
+**Add Product (Admin)**
+
+![Add Product](AdminDashboard2.jpg)
+
+**Manage Orders (Admin)**
+
+![Manage Orders](AdminDashboard3.jpg)
