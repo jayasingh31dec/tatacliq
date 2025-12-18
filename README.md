@@ -54,3 +54,62 @@ The TataCliq Clone is a feature-rich e-commerce web application inspired by Tata
 
 ## 📂 Folder Structure
 
+tataCliqClone/
+├── backend/ # Node.js, Express.js, MongoDB REST API
+├── frontend/ # React.js single-page application
+├── README.md
+├── docker-compose.yml
+└── .gitignore
+
+---
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+git clone https://github.com/jayasingh31dec/tataCliqClone.git
+cd tataCliqClone
+
+
+### 2. Install Dependencies
+
+**Frontend**
+
+cd frontend
+npm install
+
+
+**Backend**
+
+cd ../backend
+npm install
+
+
+### 3. Configure Environment Variables
+
+Create a `.env` file inside `backend/`:
+
+MONGO_URL=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+STRIPE_SECRET_KEY=your_stripe_secret
+PORT=3000
+
+
+### 4. Start Development Servers
+
+**Backend**
+
+cd backend
+npm start
+
+**Frontend**
+
+cd ../frontend
+npm start
+
+App will run on your configured frontend URL (for example `http://localhost:3005`) and backend on `http://localhost:3000`.
+
+
+
