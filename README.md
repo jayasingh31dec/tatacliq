@@ -117,36 +117,37 @@ App will run on your configured frontend URL (for example `http://localhost:3005
 
 **Home Page**
 
-![Home Page](Homepage1.jpg)
+! [Home Page](Homepage1.png)
 
 **Categories & Deals**
 
-![Categories](Homepage2.jpg)
+![Categories](Homepage2.png)
 
 **Product Listing (Filters)**
 
-![Product Listing](user3.jpg)
+![Product Listing](user3.png)
 
 **Product Details**
 
-![Product Details](user5.jpg)
+![Product Details](user5.png)
 
 **Cart & Checkout**
 
-![Checkout](user2.jpg)
+![Checkout](user2.png)
 
 **My Orders & Tracking**
 
-![Order Tracking](user2.1.jpg)
+![Order Tracking](user2.1.png)
 
 **Admin Dashboard**
 
-![Admin Dashboard](AdminDashboard1.jpg)
+![Admin Dashboard](AdminDashboard1.png)
 
 **Add Product (Admin)**
 
-![Add Product](AdminDashboard2.jpg)
+![Add Product](AdminDashboard2.png)
 
 **Manage Orders (Admin)**
 
-![Manage Orders](AdminDashboard3.jpg)
+![Manage Orders](AdminDashboard3.png)
+
