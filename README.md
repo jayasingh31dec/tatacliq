@@ -7,11 +7,12 @@ This project replicates core TataCliq features, including user authentication, p
 
 ## 🔗 Live Demo
 
-**Frontend:** https://tatacliq-xi.vercel.app/  
+**Full Application:** https://tatacliq-xi.vercel.app/  
 
-This demo showcases the full user flow: signup/login, browsing products, cart operations, and checkout process.
+This live deployment includes both the frontend and backend, showcasing the complete flow: signup/login, browsing products, cart operations, checkout, and payment.
 
 ---
+
 
 ## 📘 About the Project
 
@@ -60,8 +61,6 @@ tataCliqClone/
 ├── README.md
 ├── docker-compose.yml
 └── .gitignore
-
----
 
 ---
 
