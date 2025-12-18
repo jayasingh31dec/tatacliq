@@ -121,32 +121,32 @@ Main **home** page with hero banner, navbar, search, and promotional offers.
 
 ### Categories & Lightning Deals
 Section showing product **categories** carousel and lightning deals on the home screen.  
-! [Categories & Deals](./Homepage2.jpg)
+! [Categories & Deals](./Homepage2.png)
 
 ### Product Listing with Filters
 Brand-wise **product listing** page (e.g., Adidas) with price and discount filters on the left.  
-! [Product Listing](./user3.jpg)
+! [Product Listing](./user3.png)
 
 ### Product Details Page
 Single **product details** page with images, price, discount, rating, sizes, and Add to Cart button.  
-! [Product Details](./user5.jpg)
+! [Product Details](./user5.png)
 
 ### Cart & Checkout
 **Checkout** screen showing cart items, address, payment method (UPI), and Place Order button.  
-! [Checkout](./user2.jpg)
+! [Checkout](./user2.png)
 
 ### My Orders & Tracking
 User **order tracking** page with order status steps and list of ordered products with total amount.  
-! [Order Tracking](./user2.1.jpg)
+! [Order Tracking](./user2.1.png)
 
 ### Admin Dashboard
 Admin **dashboard** landing page with buttons to add product, manage orders, and create gift card.  
-! [Admin Dashboard](./AdminDashboard1.jpg)
+! [Admin Dashboard](./AdminDashboard1.png)
 
 ### Admin Add Product
 Admin **Add Product** form with fields for name, brand, price, images, and description.  
-! [Add Product](./AdminDashboard2.jpg)
+! [Add Product](./AdminDashboard2.png)
 
 ### Admin Manage Orders
 Admin **Manage Orders** table to view orders, user, total amount, and update order status.  
-! [Manage Orders](./AdminDashboard3.jpg)
+! [Manage Orders](./AdminDashboard3.png)
