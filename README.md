@@ -115,39 +115,38 @@ App will run on your configured frontend URL (for example `http://localhost:3005
 
 ## 🖼️ Screenshots
 
-**Home Page**
+### Home Page
+Main **home** page with hero banner, navbar, search, and promotional offers.  
+! [Home Page](./Homepage1.jpg)
 
-! [Home Page](Homepage1.png)
+### Categories & Lightning Deals
+Section showing product **categories** carousel and lightning deals on the home screen.  
+! [Categories & Deals](./Homepage2.jpg)
 
-**Categories & Deals**
+### Product Listing with Filters
+Brand-wise **product listing** page (e.g., Adidas) with price and discount filters on the left.  
+! [Product Listing](./user3.jpg)
 
-! [Categories](Homepage2.png)
+### Product Details Page
+Single **product details** page with images, price, discount, rating, sizes, and Add to Cart button.  
+! [Product Details](./user5.jpg)
 
-**Product Listing (Filters)**
+### Cart & Checkout
+**Checkout** screen showing cart items, address, payment method (UPI), and Place Order button.  
+! [Checkout](./user2.jpg)
 
-![Product Listing](user3.png)
+### My Orders & Tracking
+User **order tracking** page with order status steps and list of ordered products with total amount.  
+! [Order Tracking](./user2.1.jpg)
 
-**Product Details**
+### Admin Dashboard
+Admin **dashboard** landing page with buttons to add product, manage orders, and create gift card.  
+! [Admin Dashboard](./AdminDashboard1.jpg)
 
-![Product Details](user5.png)
+### Admin Add Product
+Admin **Add Product** form with fields for name, brand, price, images, and description.  
+! [Add Product](./AdminDashboard2.jpg)
 
-**Cart & Checkout**
-
-![Checkout](user2.png)
-
-**My Orders & Tracking**
-
-![Order Tracking](user2.1.png)
-
-**Admin Dashboard**
-
-![Admin Dashboard](AdminDashboard1.png)
-
-**Add Product (Admin)**
-
-![Add Product](AdminDashboard2.png)
-
-**Manage Orders (Admin)**
-
-![Manage Orders](AdminDashboard3.png)
-
+### Admin Manage Orders
+Admin **Manage Orders** table to view orders, user, total amount, and update order status.  
+! [Manage Orders](./AdminDashboard3.jpg)
