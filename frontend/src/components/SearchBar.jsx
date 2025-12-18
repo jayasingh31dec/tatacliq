@@ -17,8 +17,8 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="p-1">
-      <div className="flex gap-2">
+    <div className="search-bar-container">
+      <div className="search-bar-inner">
         <input
           type="text"
           placeholder="Search for products..."

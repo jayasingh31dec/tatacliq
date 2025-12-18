@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import DropdownNavbar from './components/DropdownNavbar';
+import NavbarLayout from './components/NavbarLayout';
+// import DropdownNavbar from './components/DropdownNavbar';
 import CategoryPage from './pages/CategoryPage';
 import HOME from './pages/HOME';
 import Profile from './pages/Profile';
@@ -95,6 +96,10 @@ import PrivacyPolicy from "./Footerpages/PrivacyPolicy";
 
 
 
+import React, { useState } from 'react';
+
+
+
 
 
 
@@ -102,6 +107,9 @@ import PrivacyPolicy from "./Footerpages/PrivacyPolicy";
 
 
 function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileLevel, setMobileLevel] = useState('root');
+
   return (
 
 
@@ -120,12 +128,20 @@ function App() {
 
 
           <div className="min-vh-100 d-flex flex-column">
-            <DropdownNavbar />
+            <NavbarLayout
+            mobileMenuOpen={mobileMenuOpen}
+            setMobileMenuOpen={setMobileMenuOpen}
+            mobileLevel={mobileLevel}
+            setMobileLevel={setMobileLevel}
+            /> 
+
+            {/* <DropdownNavbar /> */}
 
             <div className="flex-grow-1">
 
 
             {/* <SearchBar /> */}
+             <div className="flex-grow-1">
 
 
 
@@ -250,6 +266,7 @@ function App() {
 
 
             </Routes>
+            </div>
             </div>
             <Footer />
             </div>

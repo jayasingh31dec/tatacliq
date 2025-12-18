@@ -15,10 +15,11 @@
   padding: 20px;
 }
 
-/* Left filter panel */
+/* Filter = 20% (all screens) */
 .filter-panel {
-  width: 20%;
-  padding-right: 20px;
+  flex: 0 0 20%;        /* 20% width */
+  max-width: 260px;     /* optional: zyada na bade */
+  padding-right: 16px;
   border-right: 1px solid #ccc;
 }
 
@@ -32,17 +33,17 @@
   font-size: 0.95rem;
 }
 
-/* Right product panel */
+/* Products = remaining 80% */
 .product-panel {
-  flex: 1;
-  padding-left: 20px;
+  flex: 1 1 80%;
+  padding-left: 16px;
 }
 
 /* Product grid styling (you already have this, just for clarity) */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
 }
 
 
@@ -90,3 +91,53 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* tablet + mobile */
+@media (max-width: 768px) {
+  .category-page-container {
+    padding: 10px;
+  }
+
+  .filter-panel {
+    padding-right: 8px;
+  }
+
+  .product-panel {
+    padding-left: 8px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* very small phones */
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .color-circle {
+    width: 24px;
+    height: 24px;
+  }
+}
