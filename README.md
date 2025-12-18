@@ -121,7 +121,7 @@ App will run on your configured frontend URL (for example `http://localhost:3005
 
 **Categories & Deals**
 
-![Categories](Homepage2.png)
+! [Categories](Homepage2.png)
 
 **Product Listing (Filters)**
 
