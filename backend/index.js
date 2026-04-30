@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 
-
 const giftCardRoutes = require('./routes/giftCardRoutes');
 const authRoutes = require('./routes/authRoutes');
 const productRoutes = require("./routes/productRoutes");
